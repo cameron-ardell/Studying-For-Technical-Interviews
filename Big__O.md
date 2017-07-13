@@ -3,8 +3,9 @@
 ### How the run time scales with respect to some input variables.
 
 
-Linear: O(N) [where N is the size of the array]
+Linear:
 
+// run time is O(N) [where N is the size of the array]
 boolean contains(array, x){
 	for each element in array {
 		if element == x {
@@ -13,8 +14,9 @@ boolean contains(array, x){
 	}
 }
 
-Quadratic: O(N^2)
+Quadratic: 
 
+// run time is O(N^2)
 void printPairs(array){
 	for each x in array {
 		for each y in array {
