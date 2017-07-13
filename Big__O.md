@@ -5,25 +5,25 @@
 
 Linear:
 
-// run time is O(N) [where N is the size of the array]
-boolean contains(array, x){
-	for each element in array {
-		if element == x {
-			return true;
+	// run time is O(N) [where N is the size of the array]
+	boolean contains(array, x){
+		for each element in array {
+			if element == x {
+				return true;
+			}
 		}
 	}
-}
 
 Quadratic: 
 
-// run time is O(N^2)
-void printPairs(array){
-	for each x in array {
-		for each y in array {
-			print x, y
+	// run time is O(N^2)
+	void printPairs(array){
+		for each x in array {
+			for each y in array {
+				print x, y
+			}
 		}
 	}
-}
 
 
 ## KEY RULES 
