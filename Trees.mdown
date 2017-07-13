@@ -16,7 +16,7 @@ Find: O(N)
 
 
 ### Traversing
-__B__  
+\_\_B\_\_  
 |    |  
 A    C
 
