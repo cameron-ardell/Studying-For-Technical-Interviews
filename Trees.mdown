@@ -16,10 +16,10 @@ Find: O(N)
 
 
 ### Traversing
-	B
-   / \\
-
-  A   C
+.
++-- _B
+|   +-- A
+|   +-- C
 
 Inorder: left then root the right (A,B,C)
 Preorder: root then left then right (B,A,C)
