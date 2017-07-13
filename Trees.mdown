@@ -17,6 +17,7 @@ Find: O(N)
 
 ### Traversing
 B |--C
+  |
   |--A 
 
 Inorder: left then root the right (A,B,C)
