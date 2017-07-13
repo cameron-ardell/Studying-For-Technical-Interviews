@@ -1,8 +1,6 @@
-///////////
-// BIG O //
-///////////
+# Big O 
 
-How the run timme scales with respect to some input variables.
+##### How the run time scales with respect to some input variables.
 
 
 Linear: O(N) [where N is the size of the array]
@@ -23,11 +21,10 @@ void printPairs(array){
 	}
 }
 
-///////////////
-// KEY RULES //
-///////////////
 
-1) Different steps get added
+## KEY RULES 
+
+#### 1) Different steps get added
 i.e.
 	// run time is O(a+b)
 	function something(){
@@ -35,7 +32,7 @@ i.e.
 		doStep2(); // O(b)
 	}
 
-2) Drop constants
+#### 2) Drop constants
 i.e.
 	// run time is O(n)
 	function minMax1(array){
@@ -54,7 +51,7 @@ i.e.
 			max = MAX(e, max)
 	}
 
-3) Different inputs, use different variables for them
+#### 3) Different inputs, use different variables for them
 i.e.
 	// run time is O(a*b)
 	int intersectionSize(array A, array B){
@@ -69,7 +66,7 @@ i.e.
 		return count
 	}
 
-4) Drop non-dominant terms
+#### 4) Drop non-dominant terms
 i.e. 
 	// run time is O(n^2)
 	function whyWouldIdoThis(array A){
