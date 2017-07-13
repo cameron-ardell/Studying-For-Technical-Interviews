@@ -1,0 +1,7 @@
+# Memoization and Dynamic Programming
+
+### Dynamic programming solves smaller versions of a problem, stores intermediate results, and uses these to build next set of intermediate results
+
+### Memoization is a technique where you cache previously computed results, and return cached results when same computation is needed again.
+
+When approaching a problem you think could have have a dynamic programming solution try to first do a recursive approach, then a memoization approach, then a dynamic programming approach.

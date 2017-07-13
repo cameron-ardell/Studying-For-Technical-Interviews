@@ -1,0 +1,35 @@
+# Trees
+
+### A tree is made up of a root node and it has child nodes, who have child nodes themselves, and so on.
+
+A binary tree means that each node has 0 to 2 children, or a left and right node (one or both can be null).
+
+A binary search tree is a tree that fufills a very specific ordering property: on any subtree, the left nodes are less than the root node which is less than all of the right nodes.
+
+##### Balanced
+Insert: O(log(N))
+Find: O(log(N))
+
+##### Unbalanced
+Insert: O(N)
+Find: O(N)
+
+
+### Traversing
+	B
+   / \
+  A   C
+
+Inorder: left then root the right (A,B,C)
+Preorder: root then left then right (B,A,C)
+Postorder: left then right then root (A,C,B)
+
+We typically see inorder traveresals.
+
+
+
+
+```java
+String s = "Java syntax highlighting";
+System.out.println(s);
+```
