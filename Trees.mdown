@@ -17,8 +17,8 @@ Find: O(N)
 
 ### Traversing
 \_\_B\_\_  
-|    |  
-A    C
+|\.\.\.\.\.\.\.\.|  
+A\.\.\.\.\.C
 
 Inorder: left then root the right (A,B,C)
 Preorder: root then left then right (B,A,C)
