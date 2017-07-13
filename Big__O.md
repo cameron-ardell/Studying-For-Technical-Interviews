@@ -4,6 +4,7 @@
 
 
 Linear: O(N) [where N is the size of the array]
+
 boolean contains(array, x){
 	for each element in array {
 		if element == x {
@@ -13,6 +14,7 @@ boolean contains(array, x){
 }
 
 Quadratic: O(N^2)
+
 void printPairs(array){
 	for each x in array {
 		for each y in array {
@@ -26,6 +28,7 @@ void printPairs(array){
 
 #### 1) Different steps get added
 i.e.
+
 	// run time is O(a+b)
 	function something(){
 		doStep1(); // O(a)
@@ -34,6 +37,7 @@ i.e.
 
 #### 2) Drop constants
 i.e.
+
 	// run time is O(n)
 	function minMax1(array){
 		min, max = NULL
@@ -53,6 +57,7 @@ i.e.
 
 #### 3) Different inputs, use different variables for them
 i.e.
+
 	// run time is O(a*b)
 	int intersectionSize(array A, array B){
 		int count = 0
@@ -68,7 +73,7 @@ i.e.
 
 #### 4) Drop non-dominant terms
 i.e. 
-	
+
 	// run time is O(n^2)
 	function whyWouldIdoThis(array A){
 		max = NULL
