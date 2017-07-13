@@ -1,6 +1,6 @@
 # Big O 
 
-##### How the run time scales with respect to some input variables.
+### How the run time scales with respect to some input variables.
 
 
 Linear: O(N) [where N is the size of the array]
@@ -68,6 +68,7 @@ i.e.
 
 #### 4) Drop non-dominant terms
 i.e. 
+	
 	// run time is O(n^2)
 	function whyWouldIdoThis(array A){
 		max = NULL
