@@ -2,7 +2,8 @@
 
 #### Specialized tree, either min or max heap, where elements are always smaller  or greater than their child, respectively. The root is always the smallest or greatest node, respectively, then looking down the tree the elements always get bigger/ smaller.
 
-####How it works:
+#### How it works:
+
 *Insertion*: insert element in lowest, rightmost spot, then compare with parents, swapping it up the tree until it's in right spot
 
 *Remove min/ max*: remove root, then swap value with last element added so it's now the root. This isn't in the right spot, so compare with children, swapping with smaller/ bigger of two until it's in the right spot.
