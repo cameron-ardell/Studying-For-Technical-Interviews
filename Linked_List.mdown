@@ -1,7 +1,7 @@
 # Linked List/ Doubly Linked List
 
-#### Ordered set of data elements, each containing a link to its successor
-and in case of doubly linked list, also its predecessor.
+#### Ordered set of data elements, each containing a link to its successor and in case of doubly linked list, also its predecessor.
+
 [Tutorial](http://www.geeksforgeeks.org/linked-list-set-1-introduction/)
 
 ## Big O
