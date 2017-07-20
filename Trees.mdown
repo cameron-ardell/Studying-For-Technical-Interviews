@@ -17,7 +17,6 @@ Find: O(N)
 
 ### Traversing
 \_\_B\_\_  
-|\.\.\.\.\.\.\.\.|  
 A\.\.\.\.\.C
 
 Inorder: left then root the right (A,B,C)
@@ -30,6 +29,27 @@ We typically see inorder traveresals.
 
 
 ```java
-String s = "Java syntax highlighting";
-System.out.println(s);
+class Node {
+	Node left, right;
+	int data;
+	pubic Node(int data) {
+		this.data = datal
+	}
+
+	public void insert(int value){
+		if (value <= data) {
+			if (left == null) {
+				left = new Node(data);
+			} else {
+				left.insert(value);
+		} else {
+			if (right == null) {
+				right = new Node(data);
+			} else {
+				right.insert(value);
+			}
+			}
+		}
+	}
+}
 ```
