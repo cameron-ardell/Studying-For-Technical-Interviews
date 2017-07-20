@@ -1,6 +1,6 @@
 # Stack
 
-### Linear data structure of flexible size, LIFO (Last In First Out)
+#### Linear data structure of flexible size, LIFO (Last In First Out)
 
 
 ## Common Commands
