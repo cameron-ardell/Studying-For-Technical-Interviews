@@ -5,7 +5,6 @@ In Java, Queue does not directly have a data structure, but instead
 you can write it as a LinkedList or Priority Queue. A linked list is
 pretty standard queue implementation.
 
-[GitHub](http://github.com)
 
 ## Implementation(s)
 ```java
