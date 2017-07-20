@@ -19,9 +19,11 @@ Find: O(N)
 \_\_B\_\_  
 A\.\.\.\.\.C
 
-Inorder: left then root the right (A,B,C)
-Preorder: root then left then right (B,A,C)
-Postorder: left then right then root (A,C,B)
+**Inorder**: left then root the right (A,B,C)
+
+**Preorder**: root then left then right (B,A,C)
+
+**Postorder**: left then right then root (A,C,B)
 
 We typically see inorder traveresals.
 
