@@ -2,16 +2,28 @@
 
 ### A tree is made up of a root node and it has child nodes, who have child nodes themselves, and so on.
 
-A binary tree means that each node has 0 to 2 children, or a left and right node (one or both can be null).
+An **__n-ary tree__** is a roote tree with no more than **__n__** children.
 
-A binary search tree is a tree that fufills a very specific ordering property: on any subtree, the left nodes are less than the root node which is less than all of the right nodes.
+A **__binary tree__** means that each node has 0 to 2 children, or a left and right node (one or both can be null).
+
+A **__binary search tree__** is a tree that fufills a very specific ordering property: on any subtree, the left nodes are less than the root node which is less than all of the right nodes.
+
+A binary tree is **balanced** if for each node it holds that the number of inner nodes in the left subtree and the number of inner nodes in the right subtree differ by at most 1. A binary tree is **balanced** if for any two leaves the difference of the depth is at most 1.
+
+A **__full__** binary tree is one where each node has either 0 or 2 children.
+
+A **__complete__** binary tree is one where every level is filled, except maybe last level, which is filled left to right.
+
+A **__perfect__** binary tree is one where it is full and complete. All leaf nodes will be at the same level and this level will have the maximum number of nodes. [These are rare in interviews]
 
 ##### Balanced
 Insert: O(log(N))
+
 Find: O(log(N))
 
 ##### Unbalanced
 Insert: O(N)
+
 Find: O(N)
 
 
@@ -20,10 +32,38 @@ Find: O(N)
 A\.\.\.\.\.C
 
 **Inorder**: left then root the right (A,B,C)
+```java
+void inOrder(TreeNode node){
+	if(node != null){
+		inOrder(node.left);
+		visit(node);
+		inOrder(node.right);
+	}
+}
+```
 
 **Preorder**: root then left then right (B,A,C)
+```java
+void preOrder(TreeNode node){
+	if(node != null){
+		visit(node);
+		preOrder(node.left);
+		preOrder(node.right);
+	}
+}
+```
 
 **Postorder**: left then right then root (A,C,B)
+```java
+void postOrder(TreeNode node){
+	if(node != null){
+		postOrder(node.left);
+		ppstOrder(node.right);
+		visit(node);
+	}
+}
+```
+
 
 We typically see inorder traveresals.
 
@@ -81,5 +121,62 @@ class Node {
 			right.printInOrder();
 		}
 	}
+}
+```
+
+## Tries (prefix trees)
+A trie is a variant of an n-ary tree in which characters are stored at each node. Each path down the tree may represent a word. The * nodes are used to indicate complete words. A node in a trie can have anywhere from 1 through ALPHABET_SIZE + 1 childrne.  This can be used for quick look ups for prefixes in O(k) time, where k is the length of the prefix.
+
+### Implementation
+```java
+public class Solution {
+	public static class Node {
+		private static int NUMBER_OF_CHARACTERS = 26;
+		Node[] children = new Node[NUMBER_OF_CHARACTERS];
+		int size = 0;
+
+		private static int getCharIndex(char c){
+			return c - 'a';
+		}
+
+		private Node getNode(char c) {
+			return children[getCharIndex(c)];
+		}
+
+		private void setNode(char c, Node node) {
+			children[getCharIndex(c)] = node;
+		}
+
+		public void add(String s){
+			add(s, 0);
+		}
+
+		private void add(String s, int index) {
+			size++;
+			if(index == s.length()) return;
+			char cur = s.charAt(index);
+			int charCode = getCharIndex(cur);
+
+			Node child = getNode(cur);
+			if(child == null){
+				child = new Node();
+				setNode(cur, child);
+			}
+			child.add(s, index + 1);
+		}
+
+		public int findCount(String s, int index) {
+			if (index == s.length()){
+				return size;
+			}
+			Node child = getNode(s.charAt(index));
+			if(child == null){
+				return 0;
+			}
+			return child.findCount(s, index + 1);
+		}
+	}
+
+	public static void main(String[] args){...}
 }
 ```
