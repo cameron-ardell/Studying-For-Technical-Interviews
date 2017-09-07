@@ -1,0 +1,28 @@
+# Graphs
+
+A graph is a collection of nodes with wedges between (some of) them. Graphs can either be directed or undirected. If there is a path between every pair of nodes it is called a connected graph.
+
+![alt text](https://qph.ec.quoracdn.net/main-qimg-af801fb9de53a6a4d94faff793a853f0 "Graph Example")
+
+
+There are two common ways to represent a graph:
+
+### Adjacency List
+
+Every vertex (node) stores a list of adjacent vertices. In an undirected graph, an edge like (a,b) would be stored twice, once in a's adjacent vertices and once in b's adjacent vertices.
+
+A simple defintion for a graph node could look like a tree node:
+```java
+class Graph {
+	public Node[] nodes;
+}
+class Node {
+	public String name;
+	public Node[] children;
+}
+
+You can also use an array or hash table or lists (arrays, arraylists, linked lists, etc.) to store the adjacency list. This is moer compact, but not as clean.
+
+### Adjacency Matrix
+
+AN adjacency matrix is an NxN boolean matrix, where N is the number of nodes, where 
