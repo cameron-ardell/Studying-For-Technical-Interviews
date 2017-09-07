@@ -2,7 +2,7 @@
 
 #### Algorithm that traverses graph or tree data strucutres. Starting at a given node, explores all immediately neighboring nodes before moving to next level neighbors.
 
-Implement with recursive algorithm, need some sort of is-visited flag.
+Implement with iterative algorithm, need some sort of is-visited flag. Use queue, s.t.: {root, child-a, child-b, grandchild-a1, grandchild-a2, grandchild-b1, etc.}.
 
 ## Example Implementation(s)
 ```java
@@ -30,7 +30,7 @@ public void bfs(int[][] adjacency_matrix, Node node){
 #### Algorithm that traverses graph or tree data structure. Starting at a given node, it explores as far as possible along each branch before backtracking.
 
 Problem: can miss simple solutions, traversing lots of extra nodes before finding it. 
-Implement with iterative algorithm, use queue, s.t.: {root, child-a, child-b, grandchild-a1, grandchild-b1, etc.}.
+Implement with iterative algorithm, use stack, s.t.: {grandchild-a1, grandchild-a2, ~~child-a,~~ child-b }.
 
 ## Example Implementation(s)
 ```java
@@ -63,3 +63,16 @@ public void dfsRecursive(int[][] adjacency_matrix, Node node){
 
 }
 ```
+
+# Computational Complexity and Trade Offs
+**Space Complexity:**
+BFS - O(b^d) [branching factor raised to the depth]
+DFS - O(|V|) [longest possible path]
+
+**Time Complexity:**
+O(b^d) [since they may need to search the whole tree]
+
+**Trade Offs**
+BFS uses more memory (depending on branching factor), but will give optimal solution if you are searching for something at the lowest depth possible. Extra space is O(w), where w is maximum width of the tree.
+
+DFS is better about space but may find suboptimal solution (meaning it will stop before finding the real shortest path). Extra space is determined by maximum height for trees O(h) or O(|V|) the longest possible path of a graph.
