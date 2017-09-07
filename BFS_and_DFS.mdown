@@ -66,13 +66,19 @@ public void dfsRecursive(int[][] adjacency_matrix, Node node){
 
 # Computational Complexity and Trade Offs
 **Space Complexity:**
+
 BFS - O(b^d) [branching factor raised to the depth]
+
 DFS - O(|V|) [longest possible path]
 
+
+
 **Time Complexity:**
+
 O(b^d) [since they may need to search the whole tree]
 
 **Trade Offs**
+
 BFS uses more memory (depending on branching factor), but will give optimal solution if you are searching for something at the lowest depth possible. Extra space is O(w), where w is maximum width of the tree.
 
 DFS is better about space but may find suboptimal solution (meaning it will stop before finding the real shortest path). Extra space is determined by maximum height for trees O(h) or O(|V|) the longest possible path of a graph.
