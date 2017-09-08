@@ -46,22 +46,47 @@ An adjacency matrix is an NxN boolean matrix, where N is the number of nodes, wh
 [0,0,0,1,0,0,0]]
 ```
 
-Note that unlike adjacency lists, you need to iterate through all the nodes to identify a node's neighbors
+Note that unlike adjacency lists, you need to iterate through all the nodes to identify a node's neighbors.
+
+## Objects and Pointers
+
+This requires a data structure represented with edges and vertices. For example, an edge connects connects two vertices can be either directed or undirected and could contatin a weight. So you could construct it like this:
+```java
+Vertex a = new Vertex(1);
+Vertex b = new Vertex(2);
+Edge edge = new Edge(a,b, 30); // init an edge between ab and be with weight 30 
+```
+Alternatively, you could have node objects with pointers to adjacent nodes (with weights) to represent edges.
+
 
 ## Pros and Cons
 
-__Adjacency list__
+_Adjacency list_
 
-**Pros:** For an undirected graph, the adjacency list contains 2|__E__| elements. For a directed graph, the adjacency list contains |__E__| elements. Overall saves space, O(|V|+|E|), in the worst case C(V,2) edges, thus O(V^2). Also, adding a vertex is easier.
+**Pros:** 
+-For an undirected graph, the adjacency list contains 2|_E_| elements. For a directed graph, the adjacency list contains |_E_| elements. Overall saves space, O(|V|+|E|), in the worst case C(V,2) edges, thus O(V^2).
+-Adding a vertex is easier.
 
-**Cons:** You can't look up whether an edge exists in constant time. Instead, it takes O(V) or theta(__d__), where __d__ is the degree of vertex __i__, since that's how long __i__'s adjacency list is.
+**Cons:**
+-You can't look up whether an edge exists in constant time. Instead, it takes O(V) or theta(_d_), where _d_ is the degree of vertex _i_, since that's how long _i_'s adjacency list is.
 
 
-__Adjacency matrix__
+_Adjacency matrix_
 
-**Pros:** It has constant time look up or remove edges. Also, repersentation is easier to implement and follow. 
+**Pros:**
+-It has constant time look up or remove edges.
+-Repersentation is easier to implement and follow. 
 
-**Cons:** It takes theta(V^2) space regardless of the number of edges. Also, if you want to find which vertices are adjacent to vertex i, you have to look at all |V| entries in row i, and to find all neighbors, you need to look at 2|V| entries that are in row i and column i. Additionally, adding a vertex takes O(V^2).
+**Cons:**
+-It takes theta(V^2) space regardless of the number of edges.
+-If you want to find which vertices are adjacent to vertex i, you have to look at all |V| entries in row i, and to find all neighbors, you need to look at 2|V| entries that are in row i and column i.
+-Adding a vertex takes O(V^2). 
+-Finding (if exists) a path between two vertices takes O(V^2)
+
+_Objects and pointers_
+
+**Pros:**
+-Well suited for attributed graphs where you want to attach information to each node or graph to access or manipulate as you perform operations on your graph.
 
 
 

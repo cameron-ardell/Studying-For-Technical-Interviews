@@ -8,6 +8,21 @@ A **__binary tree__** means that each node has 0 to 2 children, or a left and ri
 
 A **__binary search tree__** is a tree that fufills a very specific ordering property: on any subtree, the left nodes are less than the root node which is less than all of the right nodes.
 
+- Efficiency
+    - Space
+        - Average: O(n)
+        - Worst: O(n)
+    - Search
+        - Average: O(log n)
+        - Worst: O(n)
+    - Insert
+        - Average: O(log n)
+        - Worst: O(n)
+    - Delete
+        - Average: O(log n)
+        - Worst: O(n)
+
+
 A binary tree is **balanced** if for each node it holds that the number of inner nodes in the left subtree and the number of inner nodes in the right subtree differ by at most 1. A binary tree is **balanced** if for any two leaves the difference of the depth is at most 1.
 
 A **__full__** binary tree is one where each node has either 0 or 2 children.
@@ -180,3 +195,24 @@ public class Solution {
 	public static void main(String[] args){...}
 }
 ```
+
+## AVL Trees
+
+![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/AVL-tree-wBalance_K.svg/320px-AVL-tree-wBalance_K.svg.png "AVL Tree Example")
+_A balanced AVL tree_
+
+An AVL tree stores in each node the height of the subtrees rooted at this node. Then, for any node, we can check if it is heigh balanced: that the height of the left subtree and the height of the right subtree differ by no more than one. AVL trees implement the standard Dictionary data type methods - fetch, insert, delete split, and join. Each has O(log(n)) run time.
+
+For each node _i_, _i_.balance measures the relative hegihts of its left and right subtrees; _i_.balance is the height of _i_'s left subtree minus the height of _i_'s right subtree. Balance must be greater than or equal to -1 and less than or equal to 1.
+
+When you **insert** a node, the balance of some nodes might change to -2 or 2. Therefore, when we "unwind" the recursive stack, we check and fix the balance at each node through a series of roations (can be either left or right).
+
+
+
+
+
+
+
+
+
+
