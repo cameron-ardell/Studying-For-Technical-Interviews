@@ -48,7 +48,7 @@ An adjacency matrix is an NxN boolean matrix, where N is the number of nodes, wh
 
 Note that unlike adjacency lists, you need to iterate through all the nodes to identify a node's neighbors.
 
-## Objects and Pointers
+### Objects and Pointers
 
 This requires a data structure represented with edges and vertices. For example, an edge connects connects two vertices can be either directed or undirected and could contatin a weight. So you could construct it like this:
 ```java
@@ -64,30 +64,38 @@ Alternatively, you could have node objects with pointers to adjacent nodes (with
 _Adjacency list_
 
 **Pros:** 
--For an undirected graph, the adjacency list contains 2|_E_| elements. For a directed graph, the adjacency list contains |_E_| elements. Overall saves space, O(|V|+|E|), in the worst case C(V,2) edges, thus O(V^2).
--Adding a vertex is easier.
+- For an undirected graph, the adjacency list contains 2|_E_| elements. For a directed graph, the adjacency list contains |_E_| elements. Overall saves space, O(|V|+|E|), in the worst case C(V,2) edges, thus O(V^2).
+- Adding a vertex is easier.
 
 **Cons:**
--You can't look up whether an edge exists in constant time. Instead, it takes O(V) or theta(_d_), where _d_ is the degree of vertex _i_, since that's how long _i_'s adjacency list is.
+- You can't look up whether an edge exists in constant time. Instead, it takes O(V) or theta(_d_), where _d_ is the degree of vertex _i_, since that's how long _i_'s adjacency list is.
 
 
 _Adjacency matrix_
 
 **Pros:**
--It has constant time look up or remove edges.
--Repersentation is easier to implement and follow. 
+- It has constant time look up or remove edges.
+- Repersentation is easier to implement and follow. 
 
 **Cons:**
--It takes theta(V^2) space regardless of the number of edges.
--If you want to find which vertices are adjacent to vertex i, you have to look at all |V| entries in row i, and to find all neighbors, you need to look at 2|V| entries that are in row i and column i.
--Adding a vertex takes O(V^2). 
--Finding (if exists) a path between two vertices takes O(V^2)
+- It takes theta(V^2) space regardless of the number of edges.
+- If you want to find which vertices are adjacent to vertex i, you have to look at all |V| entries in row i, and to find all neighbors, you need to look at 2|V| entries that are in row i and column i.
+- Adding a vertex takes O(V^2). 
+- Finding (if exists) a path between two vertices takes O(V^2)
 
 _Objects and pointers_
 
 **Pros:**
--Well suited for attributed graphs where you want to attach information to each node or graph to access or manipulate as you perform operations on your graph.
+- Well suited for attributed graphs where you want to attach information to each node or graph to access or manipulate as you perform operations on your graph.
+- Memory complexity is O(V) as you have as many objects as nodes.
+- If you use a hashmap/array to store pointers from each node, memory is (|_E_| + |_V_|)
 
+**Cons:**
+- The number of pointers required is up to O(V^2) as each node object may contain pointers for up to all the nodes.
+- Time complexity for accessing any given node is O(n)
+- Pointers need to be maintained n pairs, which can become unsynchronized, so works better with directed than undirected graphs.
+- If keeping track by having just a root node (instead of keeping pointes in an array/ hashmap), you lose access to portions of the graph that have no path to root node.
+- Reversinig the direction of a graph is difficult.
 
 
 
