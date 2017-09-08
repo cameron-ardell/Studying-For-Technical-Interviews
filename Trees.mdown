@@ -207,7 +207,7 @@ For each node _i_, _i_.balance measures the relative hegihts of its left and rig
 
 When you **insert** a node (in standard BST way, plus set new node balance to 0), the balance of some nodes might change to -2 or 2. Therefore, when we "unwind" the recursive stack, we check and fix the balance at each node through a series of roations (can be either left or right).
 
-![alt text](https://s3.amazonaws.com/hr-challenge-images/0/1436854305-b167cc766c-AVL_Tree_Rebalancing.svg.png)
+![alt text](https://s3.amazonaws.com/hr-challenge-images/0/1436854305-b167cc766c-AVL_Tree_Rebalancing.svg.png | width=400)
 
 ```java
 // Java program for insertion in AVL Tree
