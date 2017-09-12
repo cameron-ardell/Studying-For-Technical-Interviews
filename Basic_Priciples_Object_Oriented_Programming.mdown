@@ -1,0 +1,35 @@
+# Basic Priciples of Object Oriented Programming
+
+- Inheritance
+... Inherit members from parent class. One piece of code can gain the traits and behaviors of another piece of code without duplicating the code.
+- Abstraction
+... Define and excecute abstract actions. You code what your program is able to do without actuay doing it. Then people can come in and implement it using your abstract definition.
+- Encapsulation
+... Hide the internals of a class (as if in a capsule) while displaying a nice, clean interface to the outside world. You hide direct access to your data and you hide how you are manipulating that data.
+- Polymorphism
+... Access a class through its parent interface. Poly is many. Morphism is changing. Specifically, changing from one type of data to another. Or, having one type of data act like another.Think of inheritance. If object A inherits from B. Then any piece of code that takes a "B" object can also take an "A" object. Because all traits and behaviors of B are available in A.
+
+## Inheritance
+
+__A child-class can modify or extend the behavior of its parent-class(es).__
+
+**Example:** A Person class defines a person with a name and email address. A Student class inherits from Person and defines a bunch of grades. A Parent class inherits from Person and defines a job. Both a Student and a Parent are Persons (both having attributes name and email), but both also have their own specific behavior.
+
+## Abstraction
+
+__ A class defines a high-level interface to the outside world, leaving the lower-level details to implementation-specific code.__
+
+**Example:** All Pokemon should inherit from a Pokemon class but you can't create an object just from "Pokemon". You need a specific implementation of Pokemon such as Pikachu or Mewtwo.
+
+
+## Encapsultation
+
+__A class hides ('encapsulates') the details of how it does its thing, while supplying a nice, clean interface to the outside world.__
+
+**Example:** The HTTPClient knows the nitty-gritty details of octet-streaming, but all you see is a simple 'download' method. You don't have to know anything about octet-streaming to use the 'download' method, because the details are encapsulated by HTTPClient.
+
+## Polymorphism
+
+__Child-classes can be treated as the Parent-Class(es) from which they inherit.__
+
+**Example:** Bulbasaur is a pokémon. Your pokéball works with any pokémon. That means your pokéball can store a Bulbasaur because the code reads pokéball.store(pokémon) and Bulbasaur is a pokémon. So if you call Pokéball->Store(Bulbasaur) it will work just as well as if you called Pokéball->Store(Squirtle).
