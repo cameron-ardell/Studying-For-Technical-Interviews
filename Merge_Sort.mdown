@@ -1,6 +1,6 @@
 # Merge Sort
 
-![Merge Sort](https://media3.giphy.com/media/gj0WeIbB5cfQs/giphy.gif)
+![Merge Sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif
 
 Merge Sort is a divide-and-conquer algortihm. 
 
