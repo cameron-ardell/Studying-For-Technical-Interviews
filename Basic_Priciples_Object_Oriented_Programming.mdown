@@ -3,7 +3,7 @@
 - Inheritance
 ... Inherit members from parent class. One piece of code can gain the traits and behaviors of another piece of code without duplicating the code.
 - Abstraction
-... Define and excecute abstract actions. You code what your program is able to do without actuay doing it. Then people can come in and implement it using your abstract definition.
+... Define and excecute abstract actions. You code what your program is able to do without actually doing it. Then people can come in and implement it using your abstract definition.
 - Encapsulation
 ... Hide the internals of a class (as if in a capsule) while displaying a nice, clean interface to the outside world. You hide direct access to your data and you hide how you are manipulating that data.
 - Polymorphism
@@ -17,7 +17,7 @@ __A child-class can modify or extend the behavior of its parent-class(es).__
 
 ## Abstraction
 
-__ A class defines a high-level interface to the outside world, leaving the lower-level details to implementation-specific code.__
+__A class defines a high-level interface to the outside world, leaving the lower-level details to implementation-specific code.__
 
 **Example:** All Pokemon should inherit from a Pokemon class but you can't create an object just from "Pokemon". You need a specific implementation of Pokemon such as Pikachu or Mewtwo.
 
