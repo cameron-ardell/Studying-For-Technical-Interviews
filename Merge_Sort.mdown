@@ -2,17 +2,51 @@
 
 ![Merge Sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)
 
-Merge Sort is a divide-and-conquer algortihm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one. 
+Merge Sort is a divide-and-conquer algortihm with a runtime of O(n*log(n)). It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
 
-```
-MergeSort(arr[], l,  r)
-If r > l
-     1. Find the middle point to divide the array into two halves:  
-             middle m = (l+r)/2
-     2. Call mergeSort for first half:   
-             Call mergeSort(arr, l, m)
-     3. Call mergeSort for second half:
-             Call mergeSort(arr, m+1, r)
-     4. Merge the two halves sorted in step 2 and 3:
-             Call merge(arr, l, m, r)
+
+#### Merge Sort in Java
+```java
+void mergesort(int[] array){
+	int[] helper = new int[array.length];
+	mergesort(array, helper, 0, array.length - 1);
+}
+
+void mergesort(int[] array, int[] helper, int low, int high) {
+	if(low < high){
+		int middle = (low + high)/2;
+		mergesort(array, helper, low, middle); // sort left half
+		mergesort(array, helper, middle+1, high); // sort right half
+		merge(array, helper, low, middle, high); // merge them
+	}
+}
+
+void merge(int[] array, int helper, int low, int middle, int high){
+	//Copy both halves into helper array
+	for(int i = low; i <= high; i++){
+		helper[i] = array[i];
+	}
+
+	int helperLeft = low;
+	int helperRight = middle + 1;
+	int current = low;
+
+	/* Iterate through helper array. Compare left and right half, copying back
+		the smalller element from the two halves into the original array */
+	while(helperLeft <= middle && helperRight <= high){
+		if(helper[helperLeft] <= helper[helperRight]){ // if the left element is smaller than/ equal to the right element
+			array[current] = helper[helperLeft];
+			helperLeft++;
+		} else { 	// if the right element is smaller than the left element
+			array[current] = helper[helperRight];
+			helperRight++;
+		}
+		current++;
+	}
+	/* Copy the rest of the left side of the array into the targete array */
+	int remaining = middle - helperLeft;
+	for(int i = 0; i <= remaining; i++){
+		array[current+i] = helper[helperLeft + i];
+	}
+}
 ```
