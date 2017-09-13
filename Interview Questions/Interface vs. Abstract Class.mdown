@@ -1,0 +1,12 @@
+# Interface vs. Abstract Class
+
+### Interfaces
+- can have no state or implementation
+- can be subset (at least in C++) of abstract classs
+- A class implementing an interface must provide implmentation of all the methods of that interface
+- are used for communication between 2 similar/ non similar classes which do not care about the type of the class implementing the interface (e.g. height can belong to Humans, Trees, and Buildings)
+
+### Abstract Classes
+- may contain state (data memembers) and/ or implementation (methods)
+- can be inheritted without implementing the abstract methods
+- are used for modelling a class hierarchy of similar looking classes (e.g. Animal is abstract class and and Human, Lion, Tiger are concrete derived classes)
