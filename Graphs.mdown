@@ -83,6 +83,7 @@ _Adjacency matrix_
 - Adding a vertex takes O(V^2). 
 - Finding (if exists) a path between two vertices takes O(V^2)
 
+
 _Objects and pointers_
 
 **Pros:**

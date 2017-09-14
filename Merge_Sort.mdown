@@ -43,7 +43,7 @@ void merge(int[] array, int helper, int low, int middle, int high){
 		}
 		current++;
 	}
-	/* Copy the rest of the left side of the array into the targete array */
+	/* Copy the rest of the left side of the array into the target array */
 	int remaining = middle - helperLeft;
 	for(int i = 0; i <= remaining; i++){
 		array[current+i] = helper[helperLeft + i];
